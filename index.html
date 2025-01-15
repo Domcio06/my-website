@@ -3,42 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona, która miażdży</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Strona WOW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e90ff, #ff1493);
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
-        h1 {
-            font-size: 4rem;
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
             animation: glow 1.5s infinite alternate;
         }
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px #ff758c, 0 0 20px #ff758c, 0 0 30px #ff758c;
+                text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493;
             }
             to {
-                text-shadow: 0 0 20px #ff7eb3, 0 0 30px #ff7eb3, 0 0 40px #ff7eb3;
+                text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff;
             }
+        }
+        .container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h2 {
+            margin: 15px;
+            font-size: 1.5rem;
+        }
+        .card p {
+            margin: 15px;
+            font-size: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Witamy na stronie!</h1>
+    <header>
+        <h1>Strona WOW</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 1">
+            <h2>Fajna sekcja 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 2">
+            <h2>Fajna sekcja 2</h2>
+            <p>Curabitur eleifend libero ut sapien tempus, nec aliquet lectus feugiat. Donec non risus id arcu posuere ultrices.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 3">
+            <h2>Fajna sekcja 3</h2>
+            <p>Aenean in ex nec leo euismod pretium non nec arcu. Integer auctor nisi a erat feugiat, vitae suscipit tortor viverra.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Strona WOW. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
     <script>
-        // GSAP Animacja tekstu
-        gsap.to("h1", { duration: 2, y: 20, repeat: -1, yoyo: true });
+        // Dodanie animacji do kart za pomocą GSAP
+        gsap.from(".card", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3
+        });
     </script>
 </body>
 </html>
