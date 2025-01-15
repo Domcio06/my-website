@@ -65,6 +65,44 @@
             font-size: 1rem;
             color: #d1d1d1;
         }
+        .about, .contact {
+            margin: 20px;
+            padding: 20px;
+            background: #242424;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .about h2, .contact h2 {
+            margin-bottom: 15px;
+            color: #00bcd4;
+        }
+        .about p, .contact p {
+            color: #d1d1d1;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        form input, form textarea, form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        form input, form textarea {
+            background: #1a1a1a;
+            color: #f4f4f4;
+        }
+        form button {
+            background: #00bcd4;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        form button:hover {
+            background: #008c9e;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -99,6 +137,21 @@
         </div>
     </div>
 
+    <section class="about">
+        <h2>O mnie</h2>
+        <p>Witaj! Jestem entuzjastą technologii i projektowania stron internetowych. Moją pasją jest tworzenie niesamowitych projektów, które robią wrażenie na odwiedzających. Zapraszam do kontaktu!</p>
+    </section>
+
+    <section class="contact">
+        <h2>Skontaktuj się</h2>
+        <form>
+            <input type="text" placeholder="Twoje imię" required>
+            <input type="email" placeholder="Twój email" required>
+            <textarea rows="5" placeholder="Twoja wiadomość" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2025 Strona WOW. Wszystkie prawa zastrzeżone.</p>
     </footer>
@@ -110,6 +163,13 @@
             y: 50,
             duration: 1,
             stagger: 0.3
+        });
+        
+        gsap.from(".about, .contact", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 1
         });
     </script>
 </body>
