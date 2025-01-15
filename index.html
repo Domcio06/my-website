@@ -10,14 +10,14 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1e90ff, #ff1493);
-            color: white;
+            background: #121212;
+            color: #f4f4f4;
             overflow-x: hidden;
         }
         header {
             text-align: center;
             padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: #1a1a1a;
         }
         header h1 {
             font-size: 3rem;
@@ -27,10 +27,10 @@
         }
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493;
+                text-shadow: 0 0 10px #f4f4f4, 0 0 20px #f4f4f4, 0 0 30px #f4f4f4;
             }
             to {
-                text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff;
+                text-shadow: 0 0 20px #00bcd4, 0 0 30px #00bcd4, 0 0 40px #00bcd4;
             }
         }
         .container {
@@ -40,14 +40,15 @@
             gap: 20px;
         }
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: #242424;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         }
         .card img {
             width: 100%;
@@ -57,18 +58,21 @@
         .card h2 {
             margin: 15px;
             font-size: 1.5rem;
+            color: #00bcd4;
         }
         .card p {
             margin: 15px;
             font-size: 1rem;
+            color: #d1d1d1;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            background: #1a1a1a;
         }
         footer p {
             margin: 0;
+            color: #808080;
         }
     </style>
 </head>
@@ -79,17 +83,17 @@
 
     <div class="container">
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 1">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 1">
             <h2>Fajna sekcja 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         </div>
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 2">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 2">
             <h2>Fajna sekcja 2</h2>
             <p>Curabitur eleifend libero ut sapien tempus, nec aliquet lectus feugiat. Donec non risus id arcu posuere ultrices.</p>
         </div>
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 3">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 3">
             <h2>Fajna sekcja 3</h2>
             <p>Aenean in ex nec leo euismod pretium non nec arcu. Integer auctor nisi a erat feugiat, vitae suscipit tortor viverra.</p>
         </div>
