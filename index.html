@@ -6,6 +6,8 @@
     <title>Strona WOW</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
     <style>
         body {
             margin: 0;
@@ -79,6 +81,12 @@
         .about p, .contact p {
             color: #d1d1d1;
         }
+        #map {
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
         form {
             display: flex;
             flex-direction: column;
@@ -142,6 +150,11 @@
         <p>Witaj! Jestem entuzjastą technologii i projektowania stron internetowych. Moją pasją jest tworzenie niesamowitych projektów, które robią wrażenie na odwiedzających. Zapraszam do kontaktu!</p>
     </section>
 
+    <section id="map-section" class="about">
+        <h2>Nasza lokalizacja</h2>
+        <div id="map"></div>
+    </section>
+
     <section class="contact">
         <h2>Skontaktuj się</h2>
         <form>
@@ -157,7 +170,7 @@
     </footer>
 
     <script>
-        // Dodanie animacji do kart za pomocą GSAP
+        // Animacje GSAP
         gsap.from(".card", {
             opacity: 0,
             y: 50,
@@ -171,6 +184,16 @@
             duration: 1,
             delay: 1
         });
+
+        // Dodanie mapy za pomocą Leaflet
+        const map = L.map('map').setView([52.2297, 21.0122], 13); // Warszawa jako przykładowa lokalizacja
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([52.2297, 21.0122]).addTo(map)
+            .bindPopup('Jesteśmy tutaj!')
+            .openPopup();
     </script>
 </body>
 </html>
