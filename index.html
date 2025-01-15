@@ -143,6 +143,37 @@
             margin: 0;
             color: #808080;
         }
+        #tic-tac-toe {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background: #242424;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        #tic-tac-toe h2 {
+            color: #00bcd4;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            justify-content: center;
+        }
+        .grid button {
+            width: 100px;
+            height: 100px;
+            font-size: 2rem;
+            background: #1a1a1a;
+            color: #f4f4f4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .grid button:hover {
+            background: #00bcd4;
+        }
     </style>
 </head>
 <body>
@@ -153,24 +184,25 @@
             <a href="#map-section">Mapa</a>
             <a href="#about">O mnie</a>
             <a href="#contact">Kontakt</a>
+            <a href="#tic-tac-toe">Gra</a>
         </nav>
     </header>
 
     <div id="container" class="container">
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 1">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 1">
             <h2>Fajna sekcja 1</h2>
-            <p>Australian Open trwa w najlepsze. Święto tenisa w Australii ma w tym roku sporo pięknych polskich akcentów. Teraz kolejną "cegiełkę" dołożyła Magdalena Fręch. Aż trudno uwierzyć, czego dokonała tenisistka z Łodzi.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         </div>
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 2">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 2">
             <h2>Fajna sekcja 2</h2>
-            <p>Australian Open trwa w najlepsze, a emocje związane z pierwszym wielkoszlemowym turniejem sezonu rosną z każdym dniem.</p>
+            <p>Curabitur eleifend libero ut sapien tempus, nec aliquet lectus feugiat. Donec non risus id arcu posuere ultrices.</p>
         </div>
         <div class="card">
-            <img src="diddy.jpg" alt="Zdjęcie 3">
+            <img src="https://via.placeholder.com/400x200" alt="Zdjęcie 3">
             <h2>Fajna sekcja 3</h2>
-            <p>Australian Open trwa w najlepsze, a emocje związane z pierwszym wielkoszlemowym turniejem sezonu rosną z każdym dniem.</p>
+            <p>Aenean in ex nec leo euismod pretium non nec arcu. Integer auctor nisi a erat feugiat, vitae suscipit tortor viverra.</p>
         </div>
     </div>
 
@@ -192,6 +224,21 @@
             <textarea rows="5" placeholder="Twoja wiadomość" required></textarea>
             <button type="submit">Wyślij</button>
         </form>
+    </section>
+
+    <section id="tic-tac-toe">
+        <h2>Gra w Kółko i Krzyżyk</h2>
+        <div class="grid">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
     </section>
 
     <footer>
@@ -223,6 +270,19 @@
         L.marker([52.2297, 21.0122]).addTo(map)
             .bindPopup('Jesteśmy tutaj!')
             .openPopup();
+
+        // Gra w Kółko i Krzyżyk
+        const buttons = document.querySelectorAll('.grid button');
+        let currentPlayer = 'X';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (!button.textContent) {
+                    button.textContent = currentPlayer;
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            });
+        });
     </script>
 </body>
 </html>
